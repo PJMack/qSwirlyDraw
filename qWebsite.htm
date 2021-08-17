@@ -1,0 +1,248 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--This document should be in /opt/SwirlyDraw/-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>SwirlyDraw</title>
+	<script>
+		function toggle(cm){
+			if(document.getElementById){
+				tm=document.getElementById(cm).style;
+				if(tm.display == "block"){
+					tm.display="none";
+				}else{
+					tm.display = "block";
+				}
+			}
+		}
+	</script>
+	<style>
+		body
+		{
+			background-color:#CCCCFF;
+		}
+		h3
+		{
+			text-align:center;
+			cursor:pointer;
+		}
+
+		div.blok
+		{
+			margin:10px;
+			padding:5px;
+			background-color:#9999CC;
+			border-color:#3333FF;
+			border-style:double;
+			border-width:7px;
+		}
+
+		div.txt
+		{
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+	<H1 style="text-align:center; fond-weight:bold; font-family:'Sans';">SwirlyDraw</H1>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt1')">Introduction</h3>
+		<div class="txt" id="txt1" style="display:block;">
+			SwirlyDraw is a fun and mesmerizing way to kill some
+			time.  It draws graphs similar to the ones made from
+			gear mechanisms marketed as toys.  It is intended for
+			entertainment purposes, so experimenting is encouraged
+			for children and adults alike.  No maths is required
+			for using SwirlyDraw, however some users may want to
+			figure out what types of numbers produce what types of
+			patterns.  Congratulations if you do!  As well as play,
+			SwirlyDraw can also be an unique and exciting addition
+			to a budding artist's digital tool box since designs
+			can be saved and exported.<br /><br />
+
+			On the right is the graph area: a white area where
+			the graph will be drawn.  The control buttons are on
+			the left side of the window, details can be found by
+			clicking on the text below. <br /><br />
+
+			Note for DEMO Version only: Roughly two thirds of the
+			buttons will be disabled (Which buttons can vary day to
+			day and/or computer to computer).  Also, starting the
+			program can take a few seconds longer than normal.
+			The "Demonstration" button and both "Randomize" buttons
+			have been adjusted to be less random.  Also, saving and
+			exporting has been limited to simple graphs.
+		</div>
+	</div>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt3')">Select Colour:</h3>
+		<div class="txt" id="txt3">
+			<h5>Red, Green, Blue</h5>
+			These sliders adjust the red, green, and blue
+			components of the current graph colour.
+			<h5>Rainbow</h5>
+			This slider has five slots, that control how the colour
+			of the graph will change.  The first slot indicates
+			that the graph colour will remain constant while the
+			graph is being drawn.  The other four slots select a
+			rainbow pattern that will be used to change the colour
+			as the graph is being drawn, redrawn, or recoloured.
+			<h5>Random</h5>
+			Pressing the "Random" button will select a random
+			colour configuration.
+			<h5>Colourize</h5>
+			This button takes the current graph and recolours it to
+			the current colour configuration.  This allows one to
+			change the colour of an already drawn graph.
+		</div>
+	</div>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt4')">Select Gears:</h3>
+		<div class="txt" id="txt4">
+			<h5>Outer, Inner, Third</h5>
+			The numbers in the boxes are the sizes of the virtual
+			gears that determine how the graph looks.  Each gear
+			size can be set anywhere from -300 to 300, but only the
+			third gear can be set to 0.  How the graph looks is not
+			as much dependent on those sizes, but how the factors
+			of the numbers compare, as well as the ratios.  Also,
+			the size of the graph in the computer's memory is
+			dependent on these factors, see below.  The sliders to
+			the right of the numbers can be used to adjust the
+			shape of gears and therefore the shape of the graph.
+			<h5>Offset</h5>
+			This adjusts the spacing between two of the gears that
+			are linked via a virtual bicycle chain.
+			<h5>Random</h5>
+			This randomizes the gear sizes and types as well as the
+			offset.  There is a safety in the the "Random" button
+			so that it will only result in graphs that the machine
+			is capable of generating, however this safety can
+			sometimes cause the "Random" button to take a second or
+			two depending on the machine.
+		</div>
+	</div>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt5')">Engage:</h3>
+		<div class="txt" id="txt5">
+			<h5>Draw</h5>
+			This clears the current graph and sets the virtual
+			gears in motion, slowly drawing the graph as if it were
+			being done by hand.  If the system is incapable of
+			producing or finishing the graph, an error message will
+			display and drawing the graph will be discontinued.
+			Note: Pressing the draw button while it is drawing will
+			halt the gears, leaving the graph on the screen.
+			Pressing the "Draw" button a third time will cause the
+			drawing to start over again.  Also note that some other
+			controls will be disabled while the gears are in
+			motion.
+			<h5>Draw Quickly</h5>
+			This clears the current graph and draws the new graph
+			as quickly as possible.  Once complete, the new graph
+			will be displayed.  If it takes more than four seconds
+			to draw, it will abort and display what it has been
+			able to do.
+			<h5>Demonstration</h5>
+			In this mode, both the colour and the gears are
+			randomized (see above) then the graph is set to slow
+			draw.  After a few seconds, the graph is aborted and
+			the process repeats.  This is intended to be a demo or
+			even something to leave running as a screen saver.
+			Pressing the "Demonstration" button again will stop the
+			drawing, but leave up all gearing and colour
+			information.
+			<h5>Scale</h5>
+			This Slider adjusts the scale of the graph from 1/10th
+			to 10x.  The default is 1x at the centre.
+			<h5>Rotation</h5>
+			This dial rotates the graph to the desired angle.
+			<h5>The Progress Bar</H5>
+			This will display error and success messages as well as
+			the progress of some operations.
+		</div>
+	</div>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt6')">The Menus</h3>
+		<div class="txt" id="txt6">
+			<h5>Load</h5>
+			This will load a previously saved swirlydraw file.
+			<h5>Save</h5>
+			This will save the graph as a swirlydraw file (see
+			below).
+			<h5>Export</h5>
+			This will export the graph as a PNG image file (see
+			below).
+			<h5>Clear</h5>
+			This will erase the graph.
+			<h5>RESET</h5>
+			This will erase the graph as well as any stamped
+			graphs.
+			<h5>Stamp</h5>
+			This will take the current graph and stamp it onto the
+			background.
+			<h5>Help Page</h5>
+			This will bring up this document in your favourite
+			browser.
+			<h5>ar/bn/de/es/...</h5>
+			This submenu will bring up a list of languages,
+			selecting them will choose that language.  Note that
+			the translations were done with a machine and may not
+			be entirely correct.  The support email address (linked
+			to on the Software Centre) can be used to report
+			lingual errors.
+		</div>
+	</div>
+
+	<div class="blok">
+		<h3 onclick="toggle('txt7')">Advanced</h3>
+		<div class="txt" id="txt7">
+			<h5>Exporting</h5>
+			The export button (see above) creates a 2047x2047 PNG
+			image for use in an image editor such as the
+			<a href="http://www.gimp.org/">GIMP</a>.  The graph
+			(and all stamped graphs) are scaled proportionally to
+			fill the image.  The line thickness, however, is not
+			scaled so some graphs may appear almost invisible and
+			need further editing.  Note this export feature is for
+			those who want high resolution image files to edit.  If
+			the images are to be used in email or as a desktop
+			background, a screen-shot may be more suitable.
+			Note: this can take some time so be patient.
+			<h5>The swirlydraw File</h5>
+			The swirlydraw files are simply text files.  Though
+			these files can be edited (to delete stamped graphs,
+			adjust the scale and rotation, etc) opening an edited
+			file is not supported and could cause the program to
+			crash or behave erratically.
+		</div>
+	</div>
+
+	(C) Copyright 2013 Peter J Mack (GNU GPL-3.0-or-later)
+
+<!--This file is part of qSwirlyDraw.
+
+qSwirlyDraw is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+qSwirlyDraw is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with qSwirlyDraw.  If not, see <https://www.gnu.org/licenses/>. -->
+
+</body>
+
+</html>
